@@ -12,6 +12,31 @@ body {
   overflow-x:hidden;
   background:#f8b62c;
 }
+
+
+
+.icon-steem .path1:before {
+  content: "\e900";
+  color: #000;
+}
+.icon-steem .path2:before {
+  content: "\e901";
+  color: #fff;
+  margin-left: -1em;
+}
+.icon-steem .path3:before {
+  content: "\e902";
+  color: #fff;
+  margin-left: -1em;
+}
+.icon-steem .path4:before {
+  content: "\e903";
+  color: #fff;
+  margin-left: -1em;
+}
+
+
+
 /*-- Preloader css start --*/
 #preloader {
 	    background-color: #1d2430;
@@ -320,7 +345,7 @@ h4 {
 
 /*** Section ***/
 .section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 @media only screen and (max-width: 768px) {
   .section {
@@ -381,6 +406,7 @@ h4 {
   font-size: 40px;
   font-weight: 400;
   color: #fff;
+  text-shadow: 0 5px 30px rgb(44 46 83 / 30%);
 }
 @media only screen and (max-width: 768px) {
   .section-heading2 h2 {
@@ -1605,6 +1631,60 @@ header .menu-area nav ul li a {
   color: #fff;
   font-size: 16px;
 }
+
+
+header .menu-area .xiala {
+  color: white;
+  display: inline-block;
+  margin-left: 15px;
+  width: 40px;
+  position: relative;
+}
+@media only screen and (max-width: 1200px) {
+  header .menu-area .xiala {
+    display: none;
+  }
+}
+header .menu-area .xiala span {
+  display: block;
+  cursor: pointer;
+}
+header .menu-area .xiala ul {
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: none;
+}
+header .menu-area .xiala ul li {
+  color: white;
+  display: block;
+  padding: 2px 0;
+  cursor: pointer;
+}
+header .menu-area .xiala ul li:hover {
+  color: #ae29e8;
+}
+
+.lng-out li a {
+  color: white;
+}
+
+.lng-out li a:hover {
+  color: #ae29e8;
+}
+
+.lng-out-class {
+  width: max-content;
+}
+
+
+
+
+
 header .menu-area .language {
   display: inline-block;
   margin-left: 15px;
@@ -1728,7 +1808,7 @@ header .mobilemenu .mean-container a.meanmenu-reveal {
 	right:0 !important;
 	top:0 !important;
 	z-index: 100000 !important;
-	background:#0d469f;
+	background:#dea32c;
 }
 .rp_mobail_menu_main_wrapper{
 	float:none;
@@ -2435,7 +2515,7 @@ footer {
 }
 footer .footer-bottom {
   display: block;
-  background: #0d469f;
+  background: #c78705;
   height: 100px;
   line-height: 100px;
   position: relative;
@@ -2443,7 +2523,7 @@ footer .footer-bottom {
 footer .footer-bottom .copyright p {
   font-size: 14px;
   margin: 0;
-  color: rgba(255, 255, 255, 0.52);
+  color: rgba(255, 255, 255, 1);
   text-transform: uppercase;
 }
 footer .footer-bottom .copyright p span {
@@ -2476,7 +2556,7 @@ footer .footer-bottom .foo-link ul li:last-child:after {
   display: none;
 }
 footer .footer-bottom .foo-link ul li a {
-  color: rgba(255, 255, 255, 0.52);
+  color: rgba(255, 255, 255, 1);
   display: block;
   line-height: 26px;
   text-transform: uppercase;
@@ -3280,7 +3360,7 @@ background: linear-gradient(to right, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 
 }
 .projects .project-list .content {
   display: block;
-  background: #ffad00;
+  background: #c78706;
   text-align: center;
   padding: 60px 0 70px;
   border-radius: 15px;
@@ -3317,7 +3397,7 @@ background: linear-gradient(to right, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 
 }
 
 .tokens-area {
-  background:#1f58b1;
+  background:#f8b62b;
   position: relative;
 }
 .tokens-area .tokens {
@@ -3346,9 +3426,9 @@ background: linear-gradient(to right, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 
   z-index: 999;
 }
 .tokens-area .tokens .token-body {
-  background: #0d469f;
-  height: 464px;
-  padding: 50px 55px;
+  background: #c78706;
+  height: 360px;
+  padding: 10px 15px;
   display: inline-block;
   border-radius: 22px;
   position: relative;
@@ -3800,7 +3880,7 @@ background: linear-gradient(to right, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 
 .steps-area {
   position: relative;
   display: block;
-  background: #1f58b1;
+  background: #c78706;
 }
 .steps-area .steps-heading {
   display: block;
@@ -3991,18 +4071,6 @@ background: linear-gradient(to right, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 
     right: 38px;
   }
 }
-.steps-details .steps-cont ul li:after {
-  content: '';
-  position: absolute;
-  width: 14px;
-  right: 34px;
-  top: 0;
-  bottom: 0;
-  border-right: 2px solid rgba(255, 255, 255, 0.36);
-  border-top: 2px solid rgba(255, 255, 255, 0.36);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.36);
-  border-radius: 0 10px 10px 0;
-}
 @media only screen and (max-width: 480px) {
   .steps-details .steps-cont ul li:after {
     right: 24px;
@@ -4081,13 +4149,6 @@ background: linear-gradient(to right, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 
     padding-right: 0;
   }
 }
-.steps-details .steps-cont ul li.r-con:after {
-  left: 34px;
-  right: inherit;
-  border-left: 2px solid #3297cc;
-  border-right: none;
-  border-radius: 10px 0 0 10px;
-}
 @media only screen and (max-width: 480px) {
   .steps-details .steps-cont ul li.r-con:after {
     left: 24px;
@@ -4096,10 +4157,12 @@ background: linear-gradient(to right, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 
 .steps-details .steps-cont ul li.r-con:last-child:after {
   border-radius: 10px 0 0 0;
 }
-.steps-details .steps-cont ul li.r-con .cont h2 {
+.steps-details .steps-cont ul li.r-con .cont p {
   margin: 0 0 5px;
+  font-size: x-large;
+  line-height: initial;
   font-weight: 400;
-  color: #3297cc;
+  color:rgba(255, 255, 255, 1);
 }
 @media only screen and (max-width: 480px) {
   .steps-details .steps-cont ul li.r-con .cont h2 {
@@ -4117,22 +4180,13 @@ background: linear-gradient(to right, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 
 .steps-details .steps-cont ul li.r-con span {
   position: absolute;
   left: 0;
-  width: 70px;
-  height: 70px;
-  background: rgba(165,12,241,1);
-background: -moz-linear-gradient(left, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(165,12,241,1)), color-stop(100%, rgba(241,94,236,1)));
-background: -webkit-linear-gradient(left, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 100%);
-background: -o-linear-gradient(left, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 100%);
-background: -ms-linear-gradient(left, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 100%);
-background: linear-gradient(to right, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 100%);
   color: #fff;
   font-size: 30px;
-  border-radius: 100%;
   text-align: center;
   top: 39%;
-  line-height: 70px;
   z-index: 999;
+  padding: 10px;
+  background-color: #f8b62b;
 }
 @media only screen and (max-width: 480px) {
   .steps-details .steps-cont ul li.r-con span {
@@ -4141,29 +4195,6 @@ background: linear-gradient(to right, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 
     line-height: 50px;
     font-size: 20px;
   }
-}
-.steps-details .steps-cont ul li:nth-child(3):after {
-  content: '';
-  position: absolute;
-  width: 55%;
-  right: 34px;
-  top: 0;
-  bottom: 0;
-  border-right: 2px solid #3297cc;
-  border-top: 2px solid #3297cc;
-  border-bottom: 2px solid #3297cc;
-  border-radius: 0 10px 10px 0;
-}
-.steps-details .steps-cont ul li:nth-child(4):before {
-  content: '';
-  position: absolute;
-  left: 48px;
-  right: inherit;
-  width: 45%;
-  top: 0;
-  bottom: 0;
-  border-top: 2px solid rgba(255, 255, 255, 0.36);
-  border-radius: 0;
 }
 @media only screen and (max-width: 480px) {
   .steps-details .steps-cont ul li:nth-child(4):before {
@@ -4234,7 +4265,7 @@ background: linear-gradient(to right, rgba(165,12,241,1) 0%, rgba(241,94,236,1) 
   }
 }
 .steps-details, .video-des{
-	background:#0d469f;
+	background:#c78706;
 }
 .steps-details .steps-cont ul li:nth-child(6):before {
   border-top: 2px solid rgba(255, 255, 255, 0.36);
@@ -4686,7 +4717,7 @@ canvas{
 	}
 }
 p{
-	color:rgba(255, 255, 255, 0.36);
+	color:rgba(255, 255, 255, 1);
 }
 .btc_faq_main_wrapper{
 	float:left;

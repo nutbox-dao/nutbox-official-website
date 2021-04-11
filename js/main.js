@@ -1,136 +1,22 @@
 (function ($) {
  "use strict";
  
- 
- // Preloader 
 	jQuery(window).on('load', function() {
 		jQuery("#status").fadeOut();
 		jQuery("#preloader").delay(350).fadeOut("slow");
 	});
-/*----------------------------
-  1. Mobile Menu Activation
------------------------------*/
     jQuery('.mobile-menu nav').meanmenu({
         meanScreenWidth: "992",
     });
 
 
     $( ".lng-in" ).on("click",function() {
-    $( ".lng-out" ).slideToggle("slow");
-  });
+    	$(".lng-out").addClass("lng-out-class")
+	    $( ".lng-out" ).slideToggle("slow");
+
+	});
 
 smoothScroll.init();
-
-
- if( $('#pie_chart_1').length > 0 ){
-    $('#pie_chart_1').easyPieChart({
-      barColor : '#5e619c',
-      lineWidth: 2,
-      animate: 3000,
-      size: 100,
-      lineCap: 'square',
-      scaleColor:false,
-      onStep: function(from, to, percent) {
-        $(this.el).find('.percent').text(Math.round(percent));
-      }
-    });
-  }
-
-  if( $('#e_chart_3').length > 0 ){
-    var eChart_3 = echarts.init(document.getElementById('e_chart_3'));
-    var data = [{
-      value: 1945,
-      name: ''
-    }, {
-      value: 2580,
-      name: ''
-    }, {
-      value: 5160,
-      name: ''
-    }, {
-      value: 54826,
-      name: ''
-    }];
-    var option3 = {
-      tooltip: {
-        show: true,
-        trigger: 'item',
-        backgroundColor: 'rgba(33,33,33,1)',
-        borderRadius:0,
-        padding:10,
-        formatter: "{b}: {c} ({d}%)",
-        textStyle: {
-          color: '#fff',
-          fontStyle: 'normal',
-          fontWeight: 'normal',
-          fontFamily: "'Roboto', sans-serif",
-          fontSize: 12
-        } 
-      },
-      series: [{
-        type: 'pie',
-        selectedMode: 'single',
-        radius: ['90%', '30%'],
-        color: ['#0d469f','#557ebd', '#0a3984', '#1c4584'],
-        labelLine: {
-          normal: {
-            show: false
-          }
-        },
-        data: data
-      }]
-    };
-    eChart_3.setOption(option3);
-    eChart_3.resize();
-  }
-
-  if( $('#e_chart_2').length > 0 ){
-    var eChart_3 = echarts.init(document.getElementById('e_chart_2'));
-    var data = [{
-      value: 555555,
-      name: ''
-    }, {
-      value:  58152,
-      name: ''
-    }, {
-      value: 455025,
-      name: ''
-    }, {
-      value: 255525,
-      name: ''
-    }];
-    var option3 = {
-      tooltip: {
-        show: true,
-        trigger: 'item',
-        backgroundColor: 'rgba(33,33,33,1)',
-        borderRadius:0,
-        padding:10,
-        formatter: "{b}: {c} ({d}%)",
-        textStyle: {
-          color: '#fff',
-          fontStyle: 'normal',
-          fontWeight: 'normal',
-          fontFamily: "'Roboto', sans-serif",
-          fontSize: 12
-        } 
-      },
-      series: [{
-        type: 'pie',
-        selectedMode: 'single',
-        radius: ['90%', '30%'],
-        color: ['#0d469f','#557ebd', '#0a3984', '#1c4584'],
-        labelLine: {
-          normal: {
-            show: false
-          }
-        },
-        data: data
-      }]
-    };
-    eChart_3.setOption(option3);
-    eChart_3.resize();
-  }
 
 
 
@@ -195,6 +81,11 @@ owl active
   
   (function( $ ) {
 
+  	if(!isPc()) {
+  		$("#wd_scroll_wrap_4").hide();
+  		$(".wd_scroll_wrap_6").hide();
+  	}
+
 	//Function to animate slider captions 
 	function doAnimations( elems ) {
 		//Cache the animationend event in a variable
@@ -232,74 +123,6 @@ owl active
 	
 })(jQuery);
 
-
-// CountDown Js
-	var deadline = 'september 1 2018 11:59:00 GMT-0400';
-		function time_remaining(endtime){
-			var t = Date.parse(endtime) - Date.parse(new Date());
-			var seconds = Math.floor( (t/1000) % 60 );
-			var minutes = Math.floor( (t/1000/60) % 60 );
-			var hours = Math.floor( (t/(1000*60*60)) % 24 );
-			var days = Math.floor( t/(1000*60*60*24) );
-			return {'total':t, 'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds};
-		}
-		function run_clock(id,endtime){
-			var clock = document.getElementById(id);
-			
-			// get spans where our clock numbers are held
-			var days_span = clock.querySelector('.days');
-			var hours_span = clock.querySelector('.hours');
-			var minutes_span = clock.querySelector('.minutes');
-			var seconds_span = clock.querySelector('.seconds');
-
-			function update_clock(){
-				var t = time_remaining(endtime);
-				
-				// update the numbers in each part of the clock
-				days_span.innerHTML = t.days;
-				hours_span.innerHTML = ('0' + t.hours).slice(-2);
-				minutes_span.innerHTML = ('0' + t.minutes).slice(-2);
-				seconds_span.innerHTML = ('0' + t.seconds).slice(-2);
-				
-				if(t.total<=0){ clearInterval(timeinterval); }
-			}
-			update_clock();
-			var timeinterval = setInterval(update_clock,1000);
-		}
-		//run_clock('clockdiv',deadline);
-		
-		
-		
-		
-		//Single page scroll js
-	$('.wd_single_index_menu ul li a').on('click' , function(e){
-	  $('.wd_single_index_menu ul li').removeClass('active');
-	  $(this).parent().addClass('active');
-	  var target = $('[section-scroll='+$(this).attr('href')+']');
-	  e.preventDefault();
-	  var targetHeight = target.offset().top-parseInt('80', 10);
-	  $('html, body').animate({
-	   scrollTop: targetHeight
-	  }, 1000);
-	});
-	
-	$(window).scroll(function() {
-	  var windscroll = $(window).scrollTop();
-	  var target = $('.wd_single_index_menu ul li');
-	  if (windscroll >= 0) {
-	   $('[section-scroll]').each(function(i) {
-		if ($(this).position().top <= windscroll + 90) {
-		 target.removeClass('active');
-		 target.eq(i).addClass('active');
-		}
-	   });
-	  }else{
-	   target.removeClass('active');
-	   $('.wd_single_index_menu ul li:first').addClass('active');
-	  }
-
-	});
-	
 	
 	//Single page scroll js
 	$('#cssmenu ul li a').on('click' , function(e){
@@ -485,6 +308,21 @@ function update() {
 		}
 	
 	}
+}
+
+function isPc() {
+   var userAgentInfo = navigator.userAgent;
+   var Agents = ["Android", "iPhone",
+      "SymbianOS", "Windows Phone",
+      "iPad", "iPod"];
+   var flag = true;
+   for (var v = 0; v < Agents.length; v++) {
+      if (userAgentInfo.indexOf(Agents[v]) > 0) {
+         flag = false;
+         break;
+      }
+   }
+   return flag;
 }
 
 
